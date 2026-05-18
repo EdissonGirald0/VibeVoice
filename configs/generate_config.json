@@ -1,0 +1,31 @@
+{
+  "generation": {
+    "model": "microsoft/VibeVoice-Realtime-0.5B",
+    "voice": "sp-Spk1_man",
+    "cfg_scale": 1.5,
+    "ddpm_steps": 5,
+    "device": "cpu",
+    "dtype": "float32",
+    "attn_implementation": "sdpa"
+  },
+  "post_processing": {
+    "silence_threshold": -40,
+    "silence_duration": 2.0,
+    "lufs_target": -16,
+    "lufs_true_peak": -1.5,
+    "lufs_lra": 11,
+    "compression_threshold": -18,
+    "compression_ratio": 3,
+    "compression_attack": 5,
+    "compression_release": 50,
+    "fade_in": 100,
+    "fade_out": 100,
+    "output_format": "mp3",
+    "output_bitrate": "192k",
+    "output_sample_rate": 24000
+  },
+  "paths": {
+    "library": "colombian_library/",
+    "output": "output/"
+  }
+}
