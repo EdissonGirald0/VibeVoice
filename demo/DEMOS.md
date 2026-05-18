@@ -85,23 +85,38 @@ Interfaz web interactiva para transcribir audio.
 python demo/run_gradio_demo.py --share
 ```
 
-### Demo 3: TTS Realtime (Síntesis de Voz)
+### Demo TTS (Síntesis de Voz con Voz Colombiana):
 
-**Script:** `run_realtime_tts_demo.py`
+**Script:** `run_colombian_tts.py`
 
-Genera audio desde texto con:
-- Latencia ~200-300ms
-- Streaming en tiempo real
-- Múltiples voces
+Demo especializado en español colombiano con vocabulario auténtico:
+
+```bash
+# Ejemplo básico
+python demo/run_colombian_tts.py
+
+# Con texto personalizado
+python demo/run_colombian_tts.py --text_file demo/text_examples/colombian_countryside.txt
+
+# Cambiar voz
+python demo/run_colombian_tts.py --voice sp-Spk0_woman
+```
+
+**Textos de ejemplo incluidos:**
+- `colombian_dialogue.txt`: Diálogos cotidianos
+- `colombian_countryside.txt`: Historia del campo colombiano
 
 **Opciones:**
 ```bash
---text          # Texto a sintetizar
---text_file     # Archivo de texto (.txt)
---output        # Archivo de salida (default: output_tts.wav)
---voice         # Nombre de la voz (default: Wayne)
---device        # cuda, cpu, mps
+--text_file    # Archivo de texto a sintetizar
+--voice        # sp-Spk0_woman o sp-Spk1_man (default: sp-Spk1_man)
+--output       # Archivo de salida (default: output_colombian.wav)
+--device       # cuda, cpu, mps
+--cfg_scale    # Escala CFG (default: 1.5)
 ```
+
+**Nota:** VibeVoice-Realtime es English-first. El español es experimental.
+Para mejor calidad en español colombiano, se recomienda fine-tuning.
 
 ## Requisitos
 

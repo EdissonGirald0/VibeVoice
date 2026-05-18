@@ -73,8 +73,8 @@ def main():
 
     if args.tts or all_demos:
         run_command(
-            f'cd {demo_dir} && python run_realtime_tts_demo.py --device cpu',
-            "DEMO 3: TTS - Síntesis de Voz"
+            f'cd {demo_dir} && python run_colombian_tts.py --device cpu',
+            "DEMO 3: TTS - Síntesis de Voz (Español Colombiano)"
         )
 
     print("\n" + "=" * 60)
@@ -91,15 +91,15 @@ Demos disponibles:
    Script: demo/run_gradio_demo.py
    Función: Interfaz web para probar transcripción
 
-3. TTS Realtime (Síntesis de Voz)
-   Script: demo/run_realtime_tts_demo.py
-   Función: Genera audio desde texto
+3. TTS Realtime (Síntesis de Voz - Español Colombiano)
+   Script: demo/run_colombian_tts.py
+   Función: Genera audio desde texto en español colombiano
 
 Comandos rápidos:
    python demo/check_requirements.py   # Verificar sistema
    python demo/run_asr_demo.py           # Demo ASR
    python demo/run_gradio_demo.py --share  # Demo web
-   python demo/run_realtime_tts_demo.py    # Demo TTS
+   python demo/run_colombian_tts.py        # Demo TTS colombiano
 """)
 
 
