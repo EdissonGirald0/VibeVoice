@@ -116,7 +116,7 @@ def synthesize_colombian(
 
     print(f"Cargando voz: {voice}")
     with torch.serialization.safe_globals([BaseModelOutputWithPast, DynamicCache]):
-        voice_preset = torch.load(voice_file, map_location=device, weights_only=True)
+        voice_preset = torch.load(voice_file, map_location=device, weights_only=False)
 
     print("Procesando texto...")
     inputs = processor.process_input_with_cached_prompt(
@@ -142,6 +142,7 @@ def synthesize_colombian(
             top_p=0.95,
             cfg_scale=cfg_scale,
             max_new_tokens=None,
+            tokenizer=processor.tokenizer,
             verbose=True,
             all_prefilled_outputs=copy.deepcopy(voice_preset),
         )

@@ -136,8 +136,8 @@ class VibeVoiceASRDemmo:
                 speaker = seg.get("speaker_id", "N/A")
                 text = seg.get("text", "")[:100]
                 print(f"  [{start} - {end}] Speaker {speaker}: {text}...")
-else:
-    print(f"\n  ... y {len(result['segments']) - 10} segmentos más")
+            if len(result["segments"]) > 10:
+                print(f"\n  ... y {len(result['segments']) - 10} segmentos más")
 
 
 def main():
